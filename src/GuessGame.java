@@ -3,36 +3,55 @@ import java.util.Scanner;
 
 public class GuessGame {
 
-    
-    public static void main(String[] args) throws Exception {
+            
+ 
+   
+    public static void main(String[] args) {
+           int tryCount=0;
+            String svar;
+            int gissningsTal;
+           Random random=new Random();
+           int randomNumber=random.nextInt(100)+1;
+           Scanner scanner = new Scanner(System.in); 
+          System.out.println(randomNumber);
+          System.out.println("välkommen till Gissa ett nummer spelet");
+      
+      do{  
+        System.out.println("Gissa ett tal mellan 1 till 100");
         
-        Random random=new Random();
-        int randomNumber=random.nextInt(100)+1;
+           gissningsTal=scanner.nextInt();
+
        
-         System.out.println("välkommen till Gissa ett nummer spelet");
-         System.out.println("Gissa ett tal mellan 1 till 100");
-         Scanner scanner = new Scanner(System.in); 
-            int tryCount=0;
-
-
-      while(true) {
-             int gissningsTal= scanner.nextInt();
-             tryCount++;
-
-            if (gissningsTal==randomNumber){
+              
+       if (gissningsTal==randomNumber){
                System.out.println("Du gissade rätt!!!");
+               gissningsTal= scanner.nextInt();
+                tryCount++;
                System.out.println("Du gissade rätt på "+ tryCount+" försök");
-               break;
+                System.out.println("Vill du fortsätta?(ja/nej)");
+             svar=scanner.nextLine();
+
+            
+               
             }
-            else if (gissningsTal<randomNumber){
+      else if (gissningsTal<randomNumber){
                System.out.println("fel! talet är större");
             }
-            else if (gissningsTal>randomNumber){
+    else if (gissningsTal>randomNumber){
                System.out.println("nej! talet är mindre");
             }
-            scanner.close();
-    
-      }
+         }
          
+           while(true);
+          
+       
+           
+         
+           
+               
+            
+         
+
             }
-}
+         }
+      
