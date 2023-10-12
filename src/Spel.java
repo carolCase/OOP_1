@@ -35,7 +35,10 @@ public static void main(String[] args) {
                else if (gissningsTal>randomNumber){
                 System.out.println("nej! talet är mindre");
              }
-
+               else if (!hasNextInt(gissningsTal)) {
+                System.out.println("Du kan bara skriva ett tal med siffror");
+                
+               }
     
     
     }
@@ -48,6 +51,10 @@ System.out.println("Tack för den här gången");
 scanner.close();
 
 
+}
+
+private static boolean hasNextInt(int gissningsTal) {
+    return false;
 }
 
 
